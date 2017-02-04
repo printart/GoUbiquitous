@@ -47,6 +47,7 @@ class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ForecastAdapt
      * an item is clicked in the list.
      */
     final private ForecastAdapterOnClickHandler mClickHandler;
+    public WearDataPush mWearDataPush;
 
     /**
      * The interface that receives onClick messages.
@@ -76,6 +77,7 @@ class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ForecastAdapt
         mContext = context;
         mClickHandler = clickHandler;
         mUseTodayLayout = mContext.getResources().getBoolean(R.bool.use_today_layout);
+        mWearDataPush = new WearDataPush(context);
     }
 
     /**
@@ -213,6 +215,15 @@ class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ForecastAdapt
          /* Set the text and content description (for accessibility purposes) */
         forecastAdapterViewHolder.lowTempView.setText(lowString);
         forecastAdapterViewHolder.lowTempView.setContentDescription(lowA11y);
+
+        if (position == 0) {
+            mWearDataPush.setWatchData(dateString, description, highString, lowString,
+                    SunshineWeatherUtils.getSmallArtResourceIdForWeatherCondition(weatherId));
+            //Log.i("Forecast-Adapter>>", "onBindViewHolder: date:" + dateString
+            //        + " description:" + description
+            //        + " high temp:" + highString + " low temp:"
+            //        + lowString + " icon id:" + SunshineWeatherUtils.getSmallArtResourceIdForWeatherCondition(weatherId));
+        }
     }
 
     /**
