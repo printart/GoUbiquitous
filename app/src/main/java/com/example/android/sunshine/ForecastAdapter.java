@@ -216,13 +216,11 @@ class ForecastAdapter extends RecyclerView.Adapter<ForecastAdapter.ForecastAdapt
         forecastAdapterViewHolder.lowTempView.setText(lowString);
         forecastAdapterViewHolder.lowTempView.setContentDescription(lowA11y);
 
+        //set data
+        //dateString incorrect date
         if (position == 0) {
             mWearDataPush.setWatchData(dateString, description, highString, lowString,
                     SunshineWeatherUtils.getSmallArtResourceIdForWeatherCondition(weatherId));
-            //Log.i("Forecast-Adapter>>", "onBindViewHolder: date:" + dateString
-            //        + " description:" + description
-            //        + " high temp:" + highString + " low temp:"
-            //        + lowString + " icon id:" + SunshineWeatherUtils.getSmallArtResourceIdForWeatherCondition(weatherId));
         }
     }
 

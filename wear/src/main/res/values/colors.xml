@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorWBackground">#287BDE</color>
+    <color name="colorTime">#FFFAF0</color>
+    <color name="colorDate">#FAF0E6</color>
+    <color name="colorLine">#ADD8E6</color>
+    <color name="colorHigh">#F5F5F5</color>
+    <color name="colorLow">#95F5F5F5</color>
+</resources>

@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Sun Shine</string>
+    <string name="app_name">Sunshine</string>
     <string name="hello_round">Hello Round World!</string>
     <string name="hello_square">Hello Square World!</string>
+    <string name="weather_icon">weather icon</string>
+    <string name="waiting_for_data">Waiting for data</string>
 </resources>

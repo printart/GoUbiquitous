@@ -6,7 +6,6 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -19,6 +18,7 @@ import java.io.ByteArrayOutputStream;
 
 /**
  * Created by printArt
+ * ref->https://developer.android.com/training/building-wearables.html
  */
 public class WearDataPush implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
@@ -55,7 +55,6 @@ public class WearDataPush implements GoogleApiClient.ConnectionCallbacks, Google
     }
 
     public void setWatchData(String date, String description, String high, String low, int iconId) {
-        Log.i("WearDataPush", "setWatchData: >> Called");
         PutDataMapRequest dataMapRequest = PutDataMapRequest.create("/watchWeatherData");
         DataMap dataMap = dataMapRequest.getDataMap();
         dataMap.putString("date", date);

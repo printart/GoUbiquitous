@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:tools="http://schemas.android.com/tools"
+       tools:showIn="@layout/rect_activity_w_main">
+
+    <TextView
+        android:id="@+id/no_data_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/waiting_for_data"
+        android:textStyle="bold"
+        android:typeface="sans"/>
+
+    <TextView
+        android:id="@+id/date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/round_text_clock"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorDate"
+        android:textSize="@dimen/text_size_18"
+        android:textStyle="bold"
+        android:typeface="sans"
+        tools:text="Date"/>
+
+    <View
+        android:id="@+id/line_view"
+        android:layout_width="@dimen/size_60"
+        android:layout_height="@dimen/size_1"
+        android:layout_below="@id/date_text_view"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/margin_top_16"
+        android:background="@color/colorLine"/>
+
+    <TextClock
+        android:id="@+id/round_text_clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_top_32"
+        android:textColor="@color/colorTime"
+        android:textSize="@dimen/text_size_30"
+        android:typeface="sans"/>
+
+
+    <TextView
+        android:id="@+id/low_temp_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/high_temp_text_view"
+        android:layout_toEndOf="@+id/line_view"
+        android:textColor="@color/colorLow"
+        android:textSize="@dimen/text_size_20"
+        android:textStyle="bold"
+        tools:text="10"/>
+
+    <ImageView
+        android:id="@+id/weather_icon_image_view"
+        android:layout_width="@dimen/size_25"
+        android:layout_height="@dimen/size_25"
+        android:layout_below="@+id/line_view"
+        android:layout_marginTop="@dimen/margin_top_26"
+        android:layout_toStartOf="@+id/line_view"
+        android:contentDescription="@string/weather_icon"/>
+
+    <TextView
+        android:id="@+id/high_temp_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/weather_icon_image_view"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorHigh"
+        android:textSize="@dimen/text_size_20"
+        android:textStyle="bold"
+        tools:text="100"/>
+</merge>
