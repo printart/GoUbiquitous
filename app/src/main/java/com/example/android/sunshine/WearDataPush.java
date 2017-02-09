@@ -24,6 +24,7 @@ public class WearDataPush implements GoogleApiClient.ConnectionCallbacks, Google
 
     private GoogleApiClient mGoogleApiClient;
     private Context mContext;
+    //private int mCount;
 
     public WearDataPush(Context context) {
         mContext = context.getApplicationContext();
@@ -64,6 +65,13 @@ public class WearDataPush implements GoogleApiClient.ConnectionCallbacks, Google
         Bitmap bitmap = BitmapFactory.decodeResource(mContext.getResources(), iconId);
         Asset asset = createAsset(bitmap);
         dataMap.putAsset("weather_icon", asset);
+
+        /*//testing
+        /*//******************************
+        mCount = 0;
+        mCount++;
+        dataMap.putInt("count", mCount);
+        /*//*******************************/
         Wearable.DataApi.putDataItem(mGoogleApiClient, dataMapRequest.asPutDataRequest());
     }
 

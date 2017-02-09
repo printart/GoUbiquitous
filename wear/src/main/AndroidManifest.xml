@@ -2,23 +2,34 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.example.android.sunshine">
 
+    <uses-permission android:name="com.google.android.permission.PROVIDE_BACKGROUND"/>
     <uses-feature android:name="android.hardware.type.watch"/>
-
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
-        <activity
-            android:name=".WMainActivity"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+        <service
+            android:name=".BasicWatchFace"
+            android:label="Sunshine"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/square_screen"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview_circular"
+                android:resource="@drawable/round_screen"/>
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+                <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"/>
             </intent-filter>
-        </activity>
+        </service>
     </application>
 
 </manifest>

@@ -16,4 +16,9 @@
     <dimen name="margin_end_20">20dp</dimen>
     <dimen name="margin_start_20">20dp</dimen>
     <dimen name="margin_top_8">8dp</dimen>
+
+    //Edit
+    <dimen name="date_size">25sp</dimen>
+    <dimen name="time_size">25sp</dimen>
+
 </resources>
